@@ -1,3 +1,4 @@
+import re
 from PIL import Image
 import os
 from selenium import webdriver
@@ -64,6 +65,21 @@ def check_if_file_extension_in_list(filename,file_extensions):
         if filename.endswith(extension):
             result = True
     return result
+
+#todo test this
+def clean_up_list_of_post_urls(urls):
+    urls = remove_duplicates_from_list(urls)
+    result = []
+    for url in urls:
+        if re.match(r'https://reddit.com/r/.*?$', url):
+            if not 'comments' in url:
+                pass
+            else:
+                result.append(url)
+                
+def append_line_to_end_of_file(filepath,line):
+    with open(filepath, "a+") as f:
+        f.writelines(line)
 
 #use for debugging
 if __name__ == "__main__":
