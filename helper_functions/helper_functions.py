@@ -51,3 +51,10 @@ def get_selenium_driver(bool_headless):
         chrome_options.add_argument("--headless")
     chrome_options.add_argument('log-level=3')
     return webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+
+def check_if_file_extension_in_list(filename,file_extensions):
+    result = False
+    for extension in file_extensions:
+        if filename.endswith(extension):
+            result = True
+    return result

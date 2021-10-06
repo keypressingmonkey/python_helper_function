@@ -1,8 +1,8 @@
 import setuptools
 
 setuptools.setup(
-    name='helperfunction',
-    version='0.0.3',
+    name='helperfunctions',
+    version='0.0.4',
     author='KeypressingMonkey',
     author_email='keypressingmonkey@web.de',
     description='Commonly reused functions',
