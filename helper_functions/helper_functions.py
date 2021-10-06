@@ -27,11 +27,11 @@ def check_if_text_file_contains_line(filepath,line,case_insensitive):
         all_lines = f.readlines()
         if case_insensitive:
             all_lines = [x.lower() for x in all_lines]
-            if line.lower() in all_lines:
-                result = True
+            result = any(line.lower() in elem for elem in all_lines)
+            
         else:
-            if line in all_lines:
-                result = True
+            result = any(line in elem for elem in all_lines)
+
     return result
 
 def remove_line_from_text_file(filename,line_to_remove):
@@ -64,3 +64,7 @@ def check_if_file_extension_in_list(filename,file_extensions):
         if filename.endswith(extension):
             result = True
     return result
+
+#use for debugging
+if __name__ == "__main__":
+    check_if_text_file_contains_line('C:\\Users\\malte\\Desktop\\tumblrbot\\newtumbl\\original_posts_reblogged\\nursesonduty.txt','https://www.reddit.com/r/GoneWildScrubs/comments/p45r5v/i_need_to_practice_my_trauma_assessments_will_you/'.lower(),True)
