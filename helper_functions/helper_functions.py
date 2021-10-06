@@ -21,10 +21,13 @@ def load_text_lines_from_file(filepath):
         result = f.readlines()
     return result
 
-def check_if_text_file_contains_line(filepath,line):
+def check_if_text_file_contains_line(filepath,line,case_insensitive):
     result = False
     with open(filepath, 'r') as f:
-        if line in f.readlines():
+        all_lines = f.readlines()
+        if case_insensitive:
+            all_lines = [x.lower() for x in all_lines]
+        if line in all_lines:
             result = True
     return result
 
