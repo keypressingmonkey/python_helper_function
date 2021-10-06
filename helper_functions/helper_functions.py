@@ -76,7 +76,7 @@ def clean_up_list_of_post_urls(urls):
                 pass
             else:
                 result.append(url)
-                
+
 def append_line_to_end_of_file(filepath,line):
     with open(filepath, "a+") as f:
         f.writelines(line)
