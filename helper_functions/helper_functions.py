@@ -27,8 +27,11 @@ def check_if_text_file_contains_line(filepath,line,case_insensitive):
         all_lines = f.readlines()
         if case_insensitive:
             all_lines = [x.lower() for x in all_lines]
-        if line in all_lines:
-            result = True
+            if line.lower() in all_lines:
+                result = True
+        else:
+            if line in all_lines:
+                result = True
     return result
 
 def remove_line_from_text_file(filename,line_to_remove):
