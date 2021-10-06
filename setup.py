@@ -9,5 +9,5 @@ setuptools.setup(
     url='https://github.com/keypressingmonkey/python_helper_function',
     license='MIT',
     packages=['helper_functions'],
-    install_requires=['requests','pillow','Selenium','webdriver_manager'],
+    install_requires=['requests','Pillow','Selenium','webdriver_manager'],
 )
