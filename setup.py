@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name='helperfunctions',
-    version='0.0.9',
+    version='0.1.0',
     author='KeypressingMonkey',
     author_email='keypressingmonkey@web.de',
     description='Commonly reused functions',
