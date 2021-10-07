@@ -86,4 +86,6 @@ def append_line_to_end_of_file(filepath,line):
 
 #use for debugging
 if __name__ == "__main__":
-    check_if_text_file_contains_line('C:\\Users\\malte\\Desktop\\tumblrbot\\newtumbl\\original_posts_reblogged\\nursesonduty.txt','https://www.reddit.com/r/GoneWildScrubs/comments/p45r5v/i_need_to_practice_my_trauma_assessments_will_you/'.lower(),True)
+    driver = get_selenium_driver(False,"testaccount")
+
+    test = ''
