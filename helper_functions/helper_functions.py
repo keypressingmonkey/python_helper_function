@@ -52,10 +52,12 @@ def watermark_image(image_path,watermark_path):
     background.paste(foreground, (0, 0), foreground)
     background.save(image_path)
 
-def get_selenium_driver(bool_headless):
+def get_selenium_driver(bool_headless,user_data_dir):
     chrome_options = Options()
     if bool_headless:
         chrome_options.add_argument("--headless")
+    if user_data_dir:
+        chrome_options.add_argument("user-data-dir="+user_data_dir) 
     chrome_options.add_argument('log-level=3')
     return webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 
