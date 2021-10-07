@@ -57,7 +57,8 @@ def get_selenium_driver(bool_headless,user_data_dir):
     if bool_headless:
         chrome_options.add_argument("--headless")
     if user_data_dir:
-        chrome_options.add_argument("user-data-dir="+user_data_dir) 
+        dir_path = os.getcwd()
+        chrome_options.add_argument(f'user-data-dir={dir_path}\\chrome_profiles\\{user_data_dir}')
     chrome_options.add_argument('log-level=3')
     return webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 
