@@ -54,6 +54,9 @@ def watermark_image(image_path,watermark_path):
 
 def get_selenium_driver(bool_headless,user_data_dir):
     chrome_options = Options()
+    #this disables all notifications:
+    prefs = {"profile.default_content_setting_values.notifications" : 2}
+    chrome_options.add_experimental_option("prefs",prefs)
     if bool_headless:
         chrome_options.add_argument("--headless")
     if user_data_dir:
