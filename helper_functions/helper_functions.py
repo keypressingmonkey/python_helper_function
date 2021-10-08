@@ -88,7 +88,7 @@ def clean_up_list_of_post_urls(urls):
 
 def append_line_to_end_of_file(filepath,line):
     with open(filepath, "a+") as f:
-        f.writelines(line)
+        f.writelines(line+'\n')
 
 #use for debugging
 if __name__ == "__main__":
