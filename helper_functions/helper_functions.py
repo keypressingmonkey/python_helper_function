@@ -60,6 +60,8 @@ def get_selenium_driver(bool_headless,user_data_dir):
         'exit_type': 'Normal'
         }
     chrome_options.add_experimental_option("prefs",prefs)
+    chrome_options.add_argument('--ignore-certificate-errors')
+    chrome_options.add_argument('--ignore-ssl-errors')
     if bool_headless:
         chrome_options.add_argument("--headless")
         chrome_options.add_argument('window-size=1920x1080')
