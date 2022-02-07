@@ -63,11 +63,12 @@ def get_selenium_driver(bool_headless,user_data_dir):
     chrome_options.add_argument('--ignore-certificate-errors')
     chrome_options.add_argument('--ignore-ssl-errors')
     chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
-    chrome_options.add_extension(os.path.join(os.getcwd(),'helper_functions',"./idontcareaboutcookies.crx"))
 
     if bool_headless:
         chrome_options.add_argument("--headless")
         chrome_options.add_argument('window-size=1920x1080')
+    else:
+        chrome_options.add_extension(os.path.join(os.getcwd(),'helper_functions',"./idontcareaboutcookies.crx")) #extensions sadly only work in regular mode, not headless.
     if user_data_dir:
         dir_path = os.getcwd()
         chrome_options.add_argument(f'user-data-dir={dir_path}\\chrome_profiles\\{user_data_dir}')
