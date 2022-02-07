@@ -63,6 +63,7 @@ def get_selenium_driver(bool_headless,user_data_dir):
     chrome_options.add_argument('--ignore-certificate-errors')
     chrome_options.add_argument('--ignore-ssl-errors')
     chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    chrome_options.add_extension(os.path.join(os.getcwd(),'helper_functions',"./idontcareaboutcookies.crx"))
 
     if bool_headless:
         chrome_options.add_argument("--headless")
